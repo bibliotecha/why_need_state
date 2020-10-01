@@ -1,24 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
 
 function App() {
+  const countNotState = 0;
+  const [count, setCount] = useState(0);
+  console.log('componentが構築されました');
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <button onClick={() => setCount(count + 1)}>count up</button>
+      <div>{count}</div>
+      <button onClick={() => countNotState + 1}>count (not state) up</button>
+      <div>{countNotState}</div>
     </div>
   );
 }
